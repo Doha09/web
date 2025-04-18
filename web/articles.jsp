@@ -6,15 +6,59 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <title>Liste des Articles</title>
+    <meta charset="UTF-8">
+    <title>Articles disponibles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 40px;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #555;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
 
     <h2>Articles disponibles</h2>
 
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>Titre</th>
@@ -35,7 +79,6 @@
         </tbody>
     </table>
 
-    <br/>
     <h3>Catégories disponibles :</h3>
     <ul>
         <c:forEach var="cat" items="${categories}">
